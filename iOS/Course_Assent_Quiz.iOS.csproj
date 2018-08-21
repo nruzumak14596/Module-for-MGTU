@@ -1,0 +1,471 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Xamarin.Forms.2.5.0.121934\build\netstandard1.0\Xamarin.Forms.props" Condition="Exists('..\packages\Xamarin.Forms.2.5.0.121934\build\netstandard1.0\Xamarin.Forms.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProjectGuid>{253292F6-1E15-4787-8BB0-F2C158CDBBBE}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Course_Assent_Quiz.iOS</RootNamespace>
+    <AssemblyName>Course_Assent_Quiz.iOS</AssemblyName>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchFastDev>true</MtouchFastDev>
+    <IOSDebuggerPort>25328</IOSDebuggerPort>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>x86_64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchArch>ARM64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>x86_64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <DeviceSpecificBuild>true</DeviceSpecificBuild>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchFastDev>true</MtouchFastDev>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <IOSDebuggerPort>36025</IOSDebuggerPort>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchArch>ARM64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ExifLib, Version=1.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ExifLib.PCL.1.0.1\lib\portable-net45+sl50+win+WindowsPhoneApp81+wp80+Xamarin.iOS10+MonoAndroid10+MonoTouch10\ExifLib.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.FFImageLoading.2.3.6\lib\Xamarin.iOS10\FFImageLoading.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Forms, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.FFImageLoading.Forms.2.3.6\lib\Xamarin.iOS10\FFImageLoading.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Forms.Touch, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.FFImageLoading.Forms.2.3.6\lib\Xamarin.iOS10\FFImageLoading.Forms.Touch.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.FFImageLoading.2.3.6\lib\Xamarin.iOS10\FFImageLoading.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Svg.Forms, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.FFImageLoading.Svg.Forms.2.3.6\lib\Xamarin.iOS10\FFImageLoading.Svg.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Svg.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.FFImageLoading.Svg.2.3.6\lib\Xamarin.iOS10\FFImageLoading.Svg.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Transformations, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.FFImageLoading.Transformations.2.3.6\lib\Xamarin.iOS10\FFImageLoading.Transformations.dll</HintPath>
+    </Reference>
+    <Reference Include="FormsPlugin.Iconize, Version=1.5.0.13, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xam.FormsPlugin.Iconize.1.5.0.13-beta\lib\Xamarin.iOS10\FormsPlugin.Iconize.dll</HintPath>
+    </Reference>
+    <Reference Include="FormsPlugin.Iconize.iOS, Version=1.5.0.13, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xam.FormsPlugin.Iconize.1.5.0.13-beta\lib\Xamarin.iOS10\FormsPlugin.Iconize.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Itenso.TimePeriod, Version=2.1.1.0, Culture=neutral, PublicKeyToken=8cb6db75b4e81486, processorArchitecture=MSIL">
+      <HintPath>..\packages\TimePeriodLibrary.NET.2.1.1\lib\netstandard1.6\Itenso.TimePeriod.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.DownloadManager, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xam.Plugins.DownloadManager.1.3.6\lib\Xamarin.iOS10\Plugin.DownloadManager.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.DownloadManager.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xam.Plugins.DownloadManager.1.3.6\lib\Xamarin.iOS10\Plugin.DownloadManager.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.FilePicker, Version=2.0.64.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.Plugin.FilePicker.2.0.64-beta\lib\Xamarin.iOS10\Plugin.FilePicker.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.FilePicker.Abstractions, Version=2.0.64.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xamarin.Plugin.FilePicker.2.0.64-beta\lib\Xamarin.iOS10\Plugin.FilePicker.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Iconize, Version=1.5.0.13, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xam.Plugin.Iconize.1.5.0.13-beta\lib\Xamarin.iOS10\Plugin.Iconize.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.Iconize.iOS, Version=1.5.0.13, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Xam.Plugin.Iconize.1.5.0.13-beta\lib\Xamarin.iOS10\Plugin.Iconize.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="SegmentedControl.FormsPlugin.Abstractions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SegmentedControl.FormsPlugin.2.0.1\lib\Xamarin.iOS10\SegmentedControl.FormsPlugin.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="SegmentedControl.FormsPlugin.iOS, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SegmentedControl.FormsPlugin.2.0.1\lib\Xamarin.iOS10\SegmentedControl.FormsPlugin.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="SkiaSharp, Version=1.60.0.0, Culture=neutral, PublicKeyToken=0738eb9f132ed756, processorArchitecture=MSIL">
+      <HintPath>..\packages\SkiaSharp.1.60.0\lib\XamariniOS\SkiaSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="WebP.Touch, Version=1.0.6628.22311, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebP.Touch.1.0.8\lib\Xamarin.iOS10\WebP.Touch.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="Xamarin.Forms.Core">
+      <HintPath>..\packages\Xamarin.Forms.2.5.0.121934\lib\Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform">
+      <HintPath>..\packages\Xamarin.Forms.2.5.0.121934\lib\Xamarin.iOS10\Xamarin.Forms.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Platform.iOS">
+      <HintPath>..\packages\Xamarin.Forms.2.5.0.121934\lib\Xamarin.iOS10\Xamarin.Forms.Platform.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Forms.Xaml">
+      <HintPath>..\packages\Xamarin.Forms.2.5.0.121934\lib\Xamarin.iOS10\Xamarin.Forms.Xaml.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Course_Assent_Quiz\Course_Assent_Quiz.csproj">
+      <Project>{2AB71588-0BDF-4ADC-95DD-6E5C14A6CD03}</Project>
+      <Name>Course_Assent_Quiz</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Contents.json">
+      <Visible>false</Visible>
+    </ImageAsset>
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="LaunchScreen.storyboard" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Info.plist" />
+    <None Include="Entitlements.plist" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\archive_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\assign.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\assignment.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\audio_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\avi_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\base_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bmp_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\bonus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\book.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\calc_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ch_list_one.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ch_list_two.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\chart_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\chat.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\chatbox.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\choice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\close_circle_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Current_Day.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\data.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\database.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\database_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\document_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\dop_menu.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\draw_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\eps_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\external_tool.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\feedback.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\filing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\flash_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\folder_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\folder_open_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\forum.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\gif_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\glossary.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\html_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_add_white.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\image_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\impress_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ims.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\imscp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ion_stralker_person.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\isf_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\jpeg_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\label.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\LauncherScreen.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\lesson.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\load.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\LogoMGTU.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\lti.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\markup_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\math_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\moodle_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mp3_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\mpeg_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Next_Week_And_Back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\nouinion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\opencalendar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\oth_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\page.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pdf_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\png_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\powerpoint_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\progress_done.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\progress_pending.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\psd_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\quicktime_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\quiz.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\resource.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\roubles.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\scorm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\SlideMenu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\sourcecode_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\speech_bubble.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\spreadsheet_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\survey.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\text_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tiff_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\trash_Delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\unknown_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\url.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\video_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ViewCellBackground.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\wav_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\wiki.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\wmv_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\workshop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\writer_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\yesuion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\edit_comment.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <Import Project="..\packages\Xamarin.Forms.2.5.0.121934\build\netstandard1.0\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.5.0.121934\build\netstandard1.0\Xamarin.Forms.targets')" />
+</Project>

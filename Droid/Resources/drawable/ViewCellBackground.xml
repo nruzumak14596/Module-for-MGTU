@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true" >
+        <shape android:shape="rectangle">
+            <!--Change the selected color by modifying this hex value-->
+            <solid android:color="#E3E3E3" />  <!-- F5F5F5 Ставится стиль цвета МГТУ если выбрана ячемка-->
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="#FFFFFF" /> <!--Весь список изначально белый-->
+        </shape>
+    </item>
+</selector>
